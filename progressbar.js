@@ -28,7 +28,6 @@ function uploadFile(name){
         <i class="fa fa-check"></i>
       </li>`;
       uploadedArea.insertAdjacentHTML("afterbegin", uploadedHTML);
-      file_box_maker()
       return true;
     }
     progressArea.innerHTML = "";
@@ -72,15 +71,7 @@ function uploadFile(name){
     }
   });
   let formData = new FormData();
-  
-  const type = $("#traffic_counter").data("type");
-  const year = $(".years-folder").find(".active").data("yearValue");
-  const month = $(".months-folder").find(".active").data("monthValue");
   const file = $("#file").get(0).files[0];
-
-  formData.append("type", type);
-  formData.append("year", year);
-  formData.append("month", month);
   formData.append("file", file);
 
   xhr.setRequestHeader("X-CSRF-TOKEN", $('meta[name="csrf-token"]').attr("content"));
