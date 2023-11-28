@@ -46,7 +46,7 @@ function uploadFile(name){
     ajax_error(JSON.parse(xhr.response), xhr.status);
     return false
   });
-  xhr.open("POST", `${process.env.MIX_URL_DASHBOARD}files/store`);
+  xhr.open("POST", `your url for requesting to upload`);
   xhr.upload.addEventListener("progress", ({loaded, total}) =>{
     let fileLoaded = Math.floor((loaded / total) * 100);
     let fileTotal = Math.floor(total / 1000);
